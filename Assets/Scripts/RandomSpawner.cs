@@ -13,6 +13,7 @@ public class RandomSpawner : MonoBehaviour
 
     [SerializeField] private float maxX;
     [SerializeField] private float maxY;
+    [SerializeField] private Transform enemiesParent;
 
     private List<Vector2> usedPositions = new List<Vector2>();
     private float minDistance = 0.5f;
@@ -41,10 +42,14 @@ public class RandomSpawner : MonoBehaviour
                 GameObject obj = Instantiate(prefab, transform);
                 obj.transform.localPosition = localPos;
                 usedPositions.Add(localPos);
+
+                if (obj.CompareTag("Enemy") && enemiesParent != null)
+                {
+                    obj.transform.SetParent(enemiesParent.transform);
+                }
             }
         }
     }
-
     float RandomEvenPosition(float max)
     {
         float val = Random.Range(-max, max);
