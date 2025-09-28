@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class Area : MonoBehaviour
 {
     public List<Area> neighbors;
-    public bool isActive = true;
+    public bool isActive = false;
 
     public void Activate()
     {

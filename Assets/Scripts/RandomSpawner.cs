@@ -34,12 +34,13 @@ public class RandomSpawner : MonoBehaviour
         {
             float x = RandomEvenPosition(maxX);
             float y = RandomEvenPosition(maxY);
-            Vector2 pos = new Vector2(x, y);
+            Vector2 localPos = new Vector2(x, y);
 
-            if (!PositionOccupied(pos))
+            if (!PositionOccupied(localPos))
             {
-                Instantiate(prefab, pos, Quaternion.identity, transform);
-                usedPositions.Add(pos);
+                GameObject obj = Instantiate(prefab, transform);
+                obj.transform.localPosition = localPos;
+                usedPositions.Add(localPos);
             }
         }
     }
@@ -52,11 +53,11 @@ public class RandomSpawner : MonoBehaviour
         return rounded;
     }
 
-    bool PositionOccupied(Vector2 pos)
+    bool PositionOccupied(Vector2 localPos)
     {
         foreach (var used in usedPositions)
         {
-            if (Vector2.Distance(pos, used) < minDistance) return true;
+            if (Vector2.Distance(localPos, used) < minDistance) return true;
         }
         return false;
     }
