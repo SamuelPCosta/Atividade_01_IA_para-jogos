@@ -24,7 +24,7 @@ public class AreaManager : MonoBehaviour
 
         Vector2 playerPos = player.position;
 
-        // ordena todas as áreas pela distância do player
+        // ordena todas as areas pela distância do player
         var ordered = areas
             .Where(a => a != null)
             .OrderBy(a => Vector2.Distance(playerPos, a.transform.position))

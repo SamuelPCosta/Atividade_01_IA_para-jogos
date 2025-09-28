@@ -6023,11 +6023,12 @@ MonoBehaviour:
   bulletPrefab: {fileID: 535659661933345578, guid: eab3d14c899821347a1fba1f3d06c0dc, type: 3}
   lifePrefab: {fileID: 560608186049397233, guid: 5964cb2d4270f5f459432271eaf84872, type: 3}
   enemyPrefab: {fileID: 631600239165499124, guid: d9ebb5d235139c244b63ae0da72c67cd, type: 3}
-  numBullets: 5
-  numLifes: 4
-  numEnemies: 10
+  numBullets: 8
+  numLifes: 2
+  numEnemies: 12
   maxX: 10
   maxY: 10
+  enemiesParent: {fileID: 0}
 --- !u!114 &4150489940989306355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6045,7 +6046,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   isActive: 1
-  boundsCollider: {fileID: 7666034689249663321}
 --- !u!19719996 &7958248556826178761
 TilemapCollider2D:
   m_ObjectHideFlags: 0
