@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public int bullets;
     public int lifes;
 
-    private float currentLife;
+    public float currentLife;
     private GameController gameController;
     private SpriteRenderer sprite;
 
